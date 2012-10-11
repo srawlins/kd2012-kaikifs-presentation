@@ -1,0 +1,147 @@
+@import url(http://fonts.googleapis.com/css?family=Advent+Pro);
+@import url(http://fonts.googleapis.com/css?family=Oxygen);
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans+Mono);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700);
+body {
+  background-image: -webkit-linear-gradient(top left, #cc9966, #e6ccb3);
+  background-image: -moz-linear-gradient(top left, #cc9966, #e6ccb3);
+  background-image: -ms-linear-gradient(top left, #cc9966, #e6ccb3);
+  background-image: -o-linear-gradient(top left, #cc9966, #e6ccb3);
+  background-image: linear-gradient(top left, #cc9966, #e6ccb3); }
+
+.slide {
+  background: white; }
+  .slide ul {
+    text-align: left; }
+
+pre {
+  text-align: left;
+  line-height: 21px; }
+
+code {
+  background: none;
+  font-size: 19px;
+  font-family: 'Ubuntu Mono', monospace; }
+
+.step.screen h3 {
+  text-align: left;
+  margin: 0 0 -0.15em 0; }
+.step.screen pre {
+  background-color: #0c0100;
+  border: solid 3px #4c2f12;
+  font-size: 16px;
+  margin: 0;
+  padding: 3px 2px;
+  text-align: left; }
+  .step.screen pre code {
+    background-color: #0c0100;
+    color: #E5E5E5; }
+    .step.screen pre code em, .step.screen pre code strong {
+      color: #FFFFFF; }
+
+.step.left {
+  text-align: left; }
+
+.step.hidden {
+  opacity: 0; }
+
+.step.active.hidden {
+  opacity: 1; }
+
+.step pre code .black {
+  color: #0c0100; }
+.step pre code .blue {
+  color: #0000CC; }
+.step pre code .brown {
+  color: #4c2f12; }
+.step pre code .gray {
+  color: #AAAAAA; }
+.step pre code .green {
+  color: #00CD00; }
+.step pre code .teal {
+  color: #00CDCD; }
+.step pre code .yellow {
+  color: #CDCD00; }
+.step pre code strong {
+  color: #FFFFFF;
+  font-weight: 700; }
+.step pre code strong.green {
+  color: #00FF00; }
+.step pre code strong.teal {
+  color: #00FFFF; }
+.step pre code strong.yellow {
+  color: #FFFF00; }
+
+.step {
+  color: #4c2f12;
+  font-family: 'Oxygen', sans-serif;
+  padding: 20px 30px;
+  width: 780px;
+  height: 520px;
+  text-rendering: optimizelegibility; }
+  .step blockquote {
+    text-align: left; }
+  .step h1, .step h2, .step h3 {
+    font-family: 'Advent Pro', sans-serif;
+    font-weight: normal;
+    text-rendering: optimizelegibility;
+    margin: 0.2em 0;
+    color: #8c5236;
+    text-shadow: 1px 1px 1px #0c0100; }
+  .step h2 {
+    font-size: 2em; }
+    .step h2 .cuke {
+      text-shadow: -2px 3px 2px #5cad35; }
+  .step h2.one-line {
+    margin-top: 10%;
+    font-size: 4em; }
+  .step h3 {
+    font-size: 1.3em; }
+  .step h3.one-line {
+    margin-top: 1.2em;
+    font-size: 2.3em; }
+  .step h4, .step h5 {
+    font-family: 'Oxygen', sans-serif;
+    font-weight: normal;
+    text-rendering: optimizelegibility;
+    color: #8c5236;
+    text-shadow: 1px 1px 1px #0c0100; }
+  .step h4 {
+    font-size: 1.7em;
+    margin: 0.1em 0; }
+  .step h5 {
+    font-size: 0.95em;
+    margin: 0 0 0 1em; }
+  .step p {
+    margin: 0.7em 0; }
+  .step em, .step strong {
+    color: #0c0100; }
+  .step .cuke {
+    color: #164B2B;
+    font-weight: 600;
+    text-shadow: -1px 2px 1px #5cad35; }
+  .step .small {
+    font-size: 0.5em; }
+  .step .giant {
+    color: #0c0100;
+    font-size: 4em;
+    font-weight: bold;
+    line-height: 0.9em; }
+  .step .sup {
+    color: #4c2f12;
+    font-size: 1em;
+    font-weight: normal;
+    vertical-align: top; }
+  .step div.left-no-margin {
+    text-align: left; }
+    .step div.left-no-margin p {
+      font-size: 22px;
+      margin: 0.05em 0; }
+    .step div.left-no-margin pre {
+      font-size: 22px;
+      margin: 0;
+      padding: 3px 2px; }
+      .step div.left-no-margin pre code {
+        background: none;
+        color: #0c0100;
+        font-size: 22px; }
