@@ -372,6 +372,74 @@ Honestly, Selenium has a pretty cool API, buuut...
 
 ("I like my Selenium IDE...")
 
+!SLIDE x=7000 y=3700
+
+### Record Video
+
+!SLIDE x=6799 y=2950 rotate=-30
+
+### Automatically screenshot point of failure
+
+<p style="margin: 0.3em auto; text-align: center;"><img src="screenshot.png" style="width:480px;" /></p>
+
+!SLIDE x=6250 y=2401 rotate=-60
+
+### Log every click and attempt to find an element
+
+!SLIDE x=5500 y=2200 rotate=-90
+
+### Fill in fields by their "label"
+
+!SLIDE x=4750 y=2401 rotate=-120
+
+<p style="margin: 0.3em auto; text-align: center;"><img src="label.png" style="width:600px; border-right: solid 1px black; border-bottom: solid 1px black;" /></p>
+
+!SLIDE x=4201 y=2950 rotate=-150
+
+<p style="margin: 0.3em auto; text-align: center;"><img src="no_label.png" style="width:600px; border-right: solid 1px black; border-bottom: solid 1px black;" /></p>
+
+!SLIDE x=4000 y=3700 rotate=-180
+
+<p style="margin: 0.3em auto; text-align: center;"><img src="no_label_02.png" style="width:600px; border-right: solid 1px black;" /></p>
+
+!SLIDE x=4201 y=4450 rotate=-210
+
+### Fill in fields by their position in a list
+
+"first" Vendor Address
+
+"second" Accounting Line
+
+!SLIDE x=4750 y=4999 rotate=-240
+
+<p style="margin: 0.3em auto; text-align: center;"><img src="second_item.png" style="width:600px; border-right: solid 1px black;" /></p>
+
+!SLIDE screen x=5500 y=5200 rotate=-270
+
+<pre><code><span class="green">And I click "<strong>submit</strong>"</span>
+<span class="green">Then I should see "<strong>Document was successfully submitted.</strong>"</span>
+<span class="green">When I record this document number</span>
+<strong class="teal">  1232486</strong>
+<span class="green">When I record this "<strong>Requisition #</strong>"</span>
+<strong class="teal">  Requisition # = 60809</strong>
+<span class="green">And I backdoor as "<strong>kfs-test-sec-2</strong>"</span>
+<span class="green">And I open my Action List, refreshing until that document appears</span>
+...
+<span class="green">And I click "<strong>approve</strong>"</span>
+Then I should see my Action List
+When I backdoor as "kfs-test-sec22"
+And I open my Action List, refreshing until that document appears
+And I open that document
+And I click "approve"
+Then I should see my Action List
+When I backdoor as "kfs-test-sec40"
+And I am on the "Main Menu" tab
+And I click the "Contract Manager Assignment" portal link
+And I fill out the following for that "Requisition #":
+  | Contract Manager | 10 |
+And I click "submit"
+</code></pre>
+
 !SLIDE x=3000 y=1500 scale=10
 
 %% The End
