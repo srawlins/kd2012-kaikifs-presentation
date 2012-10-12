@@ -2,6 +2,7 @@ var step8State  = 0;
 var step33State = 0;
 var step35State = 0;
 var step3xState = 0;
+var step40State = 0;
 
 $(document).keypress(function(event) {
   if (event.which == 106) {
@@ -242,4 +243,67 @@ $('#step-39').bind('impress:stepleave', function () {
   $('#sgkd-c4').css('opacity', 0.01);
   $('#sgkd-c5').css('opacity', 0.01);
   $('#sgkd-c6').css('opacity', 0.01);
+});
+
+
+var step40KeyPressedHandler = function (event) {
+  if (event.which == 106) {  /* j */
+    if (step40State < 7) {
+      step40State++;
+      event.stopPropagation();
+    }
+  } else if (event.which == 107) {  /* k */
+    if (step40State > 0) {
+      step40State--;
+      event.stopPropagation();
+    }
+  } else { return; }
+  switch (step40State) {
+    case 1:
+      $('#dsl-1').fadeTo("slow", 1.0);
+      break;
+    case 2:
+      $('#dsl-2').fadeTo("slow", 1.0);
+      break;
+    case 3:
+      $('#dsl-3').fadeTo("slow", 1.0);
+      break;
+    case 4:
+      $('#dsl-4').fadeTo("slow", 1.0);
+      break;
+    case 5:
+      $('#dsl-5').fadeTo("slow", 1.0);
+      break;
+    case 6:
+      $('#dsl-6').fadeTo("slow", 1.0);
+      break;
+    case 7:
+      $('#dsl-7').fadeTo("slow", 1.0);
+      break;
+  }
+}
+
+$('#dsl-1').css('opacity', 0.01);
+$('#dsl-2').css('opacity', 0.01);
+$('#dsl-3').css('opacity', 0.01);
+$('#dsl-4').css('opacity', 0.01);
+$('#dsl-5').css('opacity', 0.01);
+$('#dsl-6').css('opacity', 0.01);
+$('#dsl-7').css('opacity', 0.01);
+
+$('#step-40').bind('impress:stepenter', function() {
+  $('body').bind('keypress', step40KeyPressedHandler);
+});
+
+$('#step-40').bind('impress:stepleave', function () {
+  step40State = 0;
+  $('body').unbind('keypress', step40KeyPressedHandler);
+
+  $('#dsl-1').css('opacity', 0.01);
+  $('#dsl-2').css('opacity', 0.01);
+  $('#dsl-3').css('opacity', 0.01);
+  $('#dsl-4').css('opacity', 0.01);
+  $('#dsl-5').css('opacity', 0.01);
+  $('#dsl-6').css('opacity', 0.01);
+  $('#dsl-7').css('opacity', 0.01);
 });

@@ -280,7 +280,7 @@ I thought Selenium was that cool browser plugin?
 
 <span class="small">\* actually, yes</span>
 
-!SLIDE left x=6000 y=800
+!SLIDE slide left x=6000 y=800
 
 Selenium _IDE_ is a neat, bare bones, record/playback Firefox plugin.
 
@@ -306,17 +306,17 @@ Selenium _WebDriver_ is the crazy powerful, awesome fun browser automation tool.
 >> </span><span id="sgkd-7"><strong>driver.quit</strong></span>
 </code></pre>
 
-!SLIDE left x=8000 y=800
+!SLIDE slide left x=8000 y=800
 
 Honestly, Selenium has a pretty cool API, buuut...
 
-!SLIDE x=4500 y=1500
+!SLIDE slide x=4500 y=1500
 
 ## Capybara's is better
 
 &lt;capybara logo not found&gt;
 
-!SLIDE x=5500 y=1500
+!SLIDE slide x=5500 y=1500
 
 ## Capybara...
 
@@ -342,18 +342,19 @@ Honestly, Selenium has a pretty cool API, buuut...
 >> </span><span id="sgkd-c6"><strong>quit</strong></span>
 </code></pre>
 
-!SLIDE x=7500 y=1500
+!SLIDE screen x=7500 y=1500
 
 ## Capybara::DSL
 
-    fill_in('First Name', :with => 'John')
-    check('A Checkbox')
-    select('Option', :from => 'Select Box')
-    
-    page.has_selector?(:xpath, '//table/tr')
-    page.has_content?('foo')
-    page.should have_content('foo')
-    find(:xpath, "//table/tr").click
+<pre><code><span id="dsl-1">fill_in(<span class="green">'First Name'</span>, :with => <span class="green">'John'</span>)</span>
+<span id="dsl-2">check(<span class="green">'A Checkbox'</span>)</span>
+<span id="dsl-3">select(<span class="green">'Option'</span>, :from => <span class="green">'Select Box'</span>)
+</span>
+<span id="dsl-4">page.has_selector?(:xpath, <span class="green">'//table/tr'</span>)</span>
+<span id="dsl-5">page.has_content?(<span class="green">'foo'</span>)</span>
+<span id="dsl-6">page.should have_content(<span class="green">'foo'</span>)</span>
+<span id="dsl-7">find(:xpath, <span class="green">"//table/tr"</span>).click</span>
+</code></pre>
 
 !SLIDE x=3000 y=1500 scale=10
 
