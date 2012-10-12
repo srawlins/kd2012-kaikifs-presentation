@@ -70,7 +70,7 @@ This means that Cucumber **scenarios** are **driving a browser** through Seleniu
 
 !SLIDE x=0 y=0 scale=4
 
-<h4 class="one-line">Show Me</h4>
+<h2 class="one-line">Show Me</h2>
 
 <video width="800" height="600" controls="controls">
   <source src="file:///home/sam/code/kaikifs/features/videos/KFSI-1021.feature__0007.webm" type="video/webm">
@@ -202,7 +202,7 @@ Step-by-step procedure. In KaikiFS, there can be more than a dozen "When" steps.
 
 ##### When I click "disapprove" with reason "Don't leave a document hanging"
 
-<p style="margin: 0.3em auto; text-align: center;"><img src="receiving_links.png" style="width:480px;" /></p>
+<p style="margin: 0.3em auto; text-align: center;"><img src="disapprove.png" style="width:480px;" /></p>
 
 !SLIDE hidden x=6500 y=500 z=2400 rotate-x=-90 scale=0.5
 
@@ -254,13 +254,19 @@ Verification steps. Typically limited to 3 verifications per scenario.
 
 #### Then I shouldn't get an HTTP Status 500
 
-!SLIDE slide left x=8500 y=-800
+!SLIDE slide left x=5000 y=-100
 
 <h2><span class="cuke">Cucumber</span> can test...</h2>
 
 * command line apps
 * web applications
 * developer tools / libraries
+
+!SLIDE slide x=6000 y=-100
+
+## Once again...
+
+Cucumber **scenarios** are **driving a browser** through Selenium, and using RSpec to define the expected **behavior**.
 
 !SLIDE x=2700 y=800 scale=3
 
@@ -278,7 +284,7 @@ Verification steps. Typically limited to 3 verifications per scenario.
 
 !SLIDE x=5000 y=800
 
-I thought Selenium was that cool browser plugin?
+"I thought Selenium was that cool browser plugin?"
 
 <span class="giant">NO</span><span class="giant sup">\*</span>
 
@@ -359,6 +365,12 @@ Honestly, Selenium has a pretty cool API, buuut...
 <span id="dsl-6">page.should have_content(<span class="green">'foo'</span>)</span>
 <span id="dsl-7">find(:xpath, <span class="green">"//table/tr"</span>).click</span>
 </code></pre>
+
+!SLIDE x=2700 y=2800 scale=3
+
+## What is so great about KaikiFS?
+
+("I like my Selenium IDE...")
 
 !SLIDE x=3000 y=1500 scale=10
 
