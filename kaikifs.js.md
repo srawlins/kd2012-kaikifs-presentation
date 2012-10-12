@@ -70,7 +70,11 @@ This means that Cucumber **scenarios** are **driving a browser** through Seleniu
 
 !SLIDE x=0 y=0 scale=4
 
-<h2 class="one-line">Show Me</h2>
+<h4 class="one-line">Show Me</h4>
+
+<video width="800" height="600" controls="controls">
+  <source src="file:///home/sam/code/kaikifs/features/videos/KFSI-1021.feature__0007.webm" type="video/webm">
+</video>
 
 !SLIDE x=2700 y=-1500 scale=3
 
