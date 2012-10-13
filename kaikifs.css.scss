@@ -26,6 +26,7 @@ body {
   background-image:         linear-gradient(top left, lighten($tan, 20%), lighten($tan, 40%));
 }
 
+
 .slide {
   background: white;
 
@@ -140,6 +141,17 @@ $step_padding_v: 20px;
   width: 720px + 120px - 2*$step_padding_h;
   height: 480px + 80px - 2*$step_padding_v;
   text-rendering: optimizelegibility;
+
+  h2.kaikifs, span.kaikifs {
+    font-family: FrizQuadrataStdMedium, 'Times New Roman';
+
+    .red {
+      color: #AB0520;
+    }
+    .blue {
+      color: #002147;
+    }
+  }
 
   blockquote {
     text-align: left;

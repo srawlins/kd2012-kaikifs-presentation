@@ -81,6 +81,12 @@ code {
   width: 780px;
   height: 520px;
   text-rendering: optimizelegibility; }
+  .step h2.kaikifs, .step span.kaikifs {
+    font-family: FrizQuadrataStdMedium, 'Times New Roman'; }
+    .step h2.kaikifs .red, .step span.kaikifs .red {
+      color: #AB0520; }
+    .step h2.kaikifs .blue, .step span.kaikifs .blue {
+      color: #002147; }
   .step blockquote {
     text-align: left; }
   .step h1, .step h2, .step h3 {
