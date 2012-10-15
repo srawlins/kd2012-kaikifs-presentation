@@ -106,6 +106,10 @@ code {
     }
   }
 
+  .darkgreen {
+    color: #006600;
+  }
+
   .teal {
     color: #00CDCD;
   }
@@ -130,6 +134,10 @@ code {
   strong.yellow {
     color: #FFFF00;
   }
+}
+
+.step.smaller p {
+  font-size: 0.9em;
 }
 
 $step_padding_h: 30px;
