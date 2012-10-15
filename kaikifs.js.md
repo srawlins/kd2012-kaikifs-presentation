@@ -58,6 +58,8 @@ code {
 
 Stakeholder-Friendly Acceptance Tests using Cucumber and Selenium
 
+Follow along at http://bit.ly/kaikifs
+
 !SLIDE slide x=0 y=-1500
 
 ### What is <span class="kaikifs"><span class="red">K</span><span class="blue">aiki</span><span class="red">FS</span></span>?
@@ -254,7 +256,27 @@ Verification steps. Typically limited to 3 verifications per scenario.
 
 #### Then I shouldn't get an HTTP Status 500
 
-!SLIDE slide left x=5000 y=-100
+!SLIDE x=5000 y=-100
+
+<h3 class="one-line">Example Step Definitions</h3>
+
+<div class="left-no-margin">
+  <p class="gherkin-1">
+    <span class='yellow'>When</span> <strong>I fill out a new Vendor Address with default values</strong>
+  </p>
+  <pre class="ruby-1"><code>When <span class='blue'>/^I fill out a new (?:Vendor Address|vendorAddress) with default values$/</span> <span class='brown'>do</span>
+  prefix = <span class="darkgreen">"document.newMaintainableObject.add.vendorAddresses."</span>
+  kaikifs.set_field(prefix+<span class="darkgreen">'vendorAddressTypeCode'</span>, <span class="darkgreen">'PURCHASE ORDER'</span>)
+  kaikifs.set_field(prefix+<span class="darkgreen">'vendorLine1Address'</span>, <span class="darkgreen">'123 main St.'</span>)
+  kaikifs.set_field(prefix+<span class="darkgreen">'vendorCityName'</span>, <span class="darkgreen">'Tucson'</span>)
+  kaikifs.set_field(prefix+<span class="darkgreen">'vendorStateCode'</span>, <span class="darkgreen">'AZ'</span>)
+  kaikifs.set_field(prefix+'vendorZipCode', '85719')
+  kaikifs.set_field(prefix+'vendorCountryCode', 'UNITED STATES')
+  kaikifs.set_field(prefix+'vendorDefaultAddressIndicator', 'Yes')
+<span class='brown'>end</span></code></pre>
+</div>
+
+!SLIDE slide left x=6000 y=-100
 
 <h2><span class="cuke">Cucumber</span> can test...</h2>
 
@@ -262,7 +284,7 @@ Verification steps. Typically limited to 3 verifications per scenario.
 * web applications
 * developer tools / libraries
 
-!SLIDE slide x=6000 y=-100
+!SLIDE slide x=7000 y=-100
 
 ## Once again...
 
@@ -309,7 +331,7 @@ Selenium _WebDriver_ is the crazy powerful, awesome fun browser automation tool.
 => #&lt;Selenium::WebDriver::Element:0x565d748bdaeb54c8...&gt;
 >> </span><span id="sgkd-4"><strong>driver.find_element(:css, <span class="green">"#gbqfq"</span>).send_keys(<span class="green">"kuali days 2012"</span>)</strong>
 => ""
->> </span><span id="sgkd-5"><strong>driver.find_element(:css, <span class="green">"#gbqfq"</span>).click</strong>
+>> </span><span id="sgkd-5"><strong>driver.find_element(:css, <span class="green">"#gbqfb"</span>).click</strong>
 => "ok"
 >> </span><span id="sgkd-6"><strong>driver.find_element(:xpath, <span class="green">"//ol[@id='rso']/li//a"</span>).click</strong>
 => "ok"
@@ -408,7 +430,7 @@ Honestly, Selenium has a pretty cool API, buuut...
 
 "first" Vendor Address
 
-"second" Accounting Line
+"second" Line Item
 
 !SLIDE x=4000 y=4200 rotate=-180
 
@@ -464,7 +486,49 @@ Honestly, Selenium has a pretty cool API, buuut...
 
 a
 
-!SLIDE x=3000 y=1500 scale=10
+!SLIDE x=2700 y=3500
+
+## Credit to
+
+The Cucumber Book; Aslak Hellesøy;
+
+impress.js;
+
+Selenium; Capybara;
+
+!SLIDE x=2700 y=4150
+
+<p style="margin: 0.3em auto; text-align: center;"><img src="starshiptroopers.jpg" style="width:600px; border-right: solid 1px black;" /></p>
+
+!SLIDE left smaller slide x=2700 y=4800
+
+Website: [confluence.arizona.edu/confluence/display/KATT/KaikiFS](confluence.arizona.edu/confluence/display/KATT/KaikiFS)
+
+(for the lazy/pragmatic: google 'kaikifs')
+
+!SLIDE x=2700 y=5450
+
+<h2>Feedback-Driven Development</h2>
+
+!SLIDE x=2700 y=6100
+
+### Test!
+
+#### Test!!!
+
+## Test!!!!!!!!
+
+!SLIDE left smaller slide x=2700 y=6750
+
+Cucumber Videos: cukes.info
+
+Selenium Blog Aggregation: A Smattering of Selenium
+
+!SLIDE slide x=2700 y=7400
+
+<h2 class="kaikifs"><span class="red">K</span><span class="blue">aiki</span><span class="red">FS</span></h2>
+
+srawlins@email.arizona.edu
 
 %% The End
 %%%%%%%%%%%%%%%
