@@ -1,10 +1,10 @@
 var step4State  = 0;
-var step8State  = 0;
-var step30State = 0;
-var step35State = 0;
-var step37State = 0;
-var step41State = 0;
-var step42State = 0;
+var step18State = 0;
+var step40State = 0;
+var step7State = 0;
+var step9State = 0;
+var step13State = 0;
+var step14State = 0;
 
 $(document).keypress(function(event) {
   if (event.which == 106) {
@@ -58,194 +58,194 @@ $('#step-4').bind('impress:stepleave', function () {
 });
 
 
-var step8KeyPressedHandler = function (event) {
+var step18KeyPressedHandler = function (event) {
   if (event.which == 106) {  /* j */
-    if (step8State < 4) {
-      step8State++;
+    if (step18State < 4) {
+      step18State++;
       event.stopPropagation();
     }
   } else if (event.which == 107) {  /* k */
-    if (step8State > 0) {
-      step8State--;
+    if (step18State > 0) {
+      step18State--;
       event.stopPropagation();
     }
   } else { return; }
-  switch (step8State) {
+  switch (step18State) {
     case 1:
-      $('#step-8 h3').animate({
+      $('#step-18 h3').animate({
         marginTop: 0,
         fontSize: "1.6em"
       }, 1000, function () {
-        $('#step-8 .gherkin-1').fadeIn(400);
-        $('#step-8 .gherkin-2').fadeIn(400);
-        $('#step-8 .gherkin-3').fadeIn(400);
+        $('#step-18 .gherkin-1').fadeIn(400);
+        $('#step-18 .gherkin-2').fadeIn(400);
+        $('#step-18 .gherkin-3').fadeIn(400);
       });
       break;
     case 2:
-      $('#step-8 .gherkin-1').fadeOut(300, function () {
-        $('#step-8 .ruby-1').fadeIn(400);
+      $('#step-18 .gherkin-1').fadeOut(300, function () {
+        $('#step-18 .ruby-1').fadeIn(400);
       });
       break;
     case 3:
-      $('#step-8 .gherkin-2').fadeOut(300, function () {
-        $('#step-8 .ruby-2').fadeIn(400);
+      $('#step-18 .gherkin-2').fadeOut(300, function () {
+        $('#step-18 .ruby-2').fadeIn(400);
       });
       break;
     case 4:
-      $('#step-8 .gherkin-3').fadeOut(300, function () {
-        $('#step-8 .ruby-3').fadeIn(400);
+      $('#step-18 .gherkin-3').fadeOut(300, function () {
+        $('#step-18 .ruby-3').fadeIn(400);
       });
       break;
   }
 }
 
-var step8binder = function () {
-  $('body').bind('keypress', step8KeyPressedHandler);
+var step18binder = function () {
+  $('body').bind('keypress', step18KeyPressedHandler);
 }
 
-$('#step-8 .gherkin-1').hide();
-$('#step-8 .ruby-1').hide();
-$('#step-8 .gherkin-2').hide();
-$('#step-8 .ruby-2').hide();
-$('#step-8 .gherkin-3').hide();
-$('#step-8 .ruby-3').hide();
+$('#step-18 .gherkin-1').hide();
+$('#step-18 .ruby-1').hide();
+$('#step-18 .gherkin-2').hide();
+$('#step-18 .ruby-2').hide();
+$('#step-18 .gherkin-3').hide();
+$('#step-18 .ruby-3').hide();
 
-$('#step-8').bind('impress:stepenter', function() {
-  $('body').bind('keypress', step8KeyPressedHandler);
+$('#step-18').bind('impress:stepenter', function() {
+  $('body').bind('keypress', step18KeyPressedHandler);
 });
 
-$('#step-8').bind('impress:stepleave', function () {
-  step8State = 0;
-  $('body').unbind('keypress', step8KeyPressedHandler);
+$('#step-18').bind('impress:stepleave', function () {
+  step18State = 0;
+  $('body').unbind('keypress', step18KeyPressedHandler);
 
-  $('#step-8 h3').attr('style', '');
-  $('#step-8 .gherkin-1').hide();
-  $('#step-8 .ruby-1').hide();
-  $('#step-8 .gherkin-2').hide();
-  $('#step-8 .ruby-2').hide();
-  $('#step-8 .gherkin-3').hide();
-  $('#step-8 .ruby-3').hide();
+  $('#step-18 h3').attr('style', '');
+  $('#step-18 .gherkin-1').hide();
+  $('#step-18 .ruby-1').hide();
+  $('#step-18 .gherkin-2').hide();
+  $('#step-18 .ruby-2').hide();
+  $('#step-18 .gherkin-3').hide();
+  $('#step-18 .ruby-3').hide();
 });
 
 
-var step30KeyPressedHandler = function (event) {
+var step40KeyPressedHandler = function (event) {
   if (event.which == 106) {  /* j */
-    if (step30State < 4) {
-      step30State++;
+    if (step40State < 4) {
+      step40State++;
       event.stopPropagation();
     }
   } else if (event.which == 107) {  /* k */
-    if (step30State > 0) {
-      step30State--;
+    if (step40State > 0) {
+      step40State--;
       event.stopPropagation();
     }
   } else { return; }
-  switch (step30State) {
+  switch (step40State) {
     case 1:
-      $('#step-30 h3').animate({
+      $('#step-40 h3').animate({
         marginTop: 0,
         fontSize: "1.6em"
       }, 1000, function () {
-        $('#step-30 .gherkin-1').fadeIn(400);
+        $('#step-40 .gherkin-1').fadeIn(400);
       });
       break;
     case 2:
-      $('#step-30 .ruby-1').fadeIn(400);
+      $('#step-40 .ruby-1').fadeIn(400);
       break;
     case 3:
-      $('#step-30 .gherkin-2').fadeOut(300, function () {
-        $('#step-30 .ruby-2').fadeIn(400);
+      $('#step-40 .gherkin-2').fadeOut(300, function () {
+        $('#step-40 .ruby-2').fadeIn(400);
       });
       break;
     case 4:
-      $('#step-30 .gherkin-3').fadeOut(300, function () {
-        $('#step-30 .ruby-3').fadeIn(400);
+      $('#step-40 .gherkin-3').fadeOut(300, function () {
+        $('#step-40 .ruby-3').fadeIn(400);
       });
       break;
   }
 }
 
-var step30binder = function () {
-  $('body').bind('keypress', step30KeyPressedHandler);
+var step40binder = function () {
+  $('body').bind('keypress', step40KeyPressedHandler);
 }
 
-$('#step-30 .gherkin-1').hide();
-$('#step-30 .ruby-1').hide();
+$('#step-40 .gherkin-1').hide();
+$('#step-40 .ruby-1').hide();
 
-$('#step-30').bind('impress:stepenter', function() {
-  $('body').bind('keypress', step30KeyPressedHandler);
+$('#step-40').bind('impress:stepenter', function() {
+  $('body').bind('keypress', step40KeyPressedHandler);
 });
 
-$('#step-30').bind('impress:stepleave', function () {
-  step30State = 0;
-  $('body').unbind('keypress', step30KeyPressedHandler);
+$('#step-40').bind('impress:stepleave', function () {
+  step40State = 0;
+  $('body').unbind('keypress', step40KeyPressedHandler);
 
-  $('#step-30 h3').attr('style', '');
-  $('#step-30 .gherkin-1').hide();
-  $('#step-30 .ruby-1').hide();
-  $('#step-30 .gherkin-2').hide();
-  $('#step-30 .ruby-2').hide();
-  $('#step-30 .gherkin-3').hide();
-  $('#step-30 .ruby-3').hide();
+  $('#step-40 h3').attr('style', '');
+  $('#step-40 .gherkin-1').hide();
+  $('#step-40 .ruby-1').hide();
+  $('#step-40 .gherkin-2').hide();
+  $('#step-40 .ruby-2').hide();
+  $('#step-40 .gherkin-3').hide();
+  $('#step-40 .ruby-3').hide();
 });
 
 
-var step35KeyPressedHandler = function (event) {
+var step7KeyPressedHandler = function (event) {
   if (event.which == 106) {  /* j */
-    if (step35State < 3) {
-      step35State++;
+    if (step7State < 3) {
+      step7State++;
       event.stopPropagation();
     }
   } else if (event.which == 107) {  /* k */
-    if (step35State > 0) {
-      step35State--;
+    if (step7State > 0) {
+      step7State--;
       event.stopPropagation();
     }
   } else { return; }
-  switch (step35State) {
+  switch (step7State) {
     case 1:
-      $('#step-35 .giant:eq(0)').fadeIn(200);
+      $('#step-7 .giant:eq(0)').fadeIn(200);
       break;
     case 2:
-      $('#step-35 .giant:eq(1)').fadeTo(800, 1.0);
+      $('#step-7 .giant:eq(1)').fadeTo(800, 1.0);
       break;
     case 3:
-      $('#step-35 .small').fadeIn(800);
+      $('#step-7 .small').fadeIn(800);
       break;
   }
 }
 
-$('#step-35 .giant:eq(0)').hide();
-$('#step-35 .giant:eq(1)').css('opacity', 0.01);
-$('#step-35 .small').hide();
+$('#step-7 .giant:eq(0)').hide();
+$('#step-7 .giant:eq(1)').css('opacity', 0.01);
+$('#step-7 .small').hide();
 
-$('#step-35').bind('impress:stepenter', function() {
-  $('body').bind('keypress', step35KeyPressedHandler);
+$('#step-7').bind('impress:stepenter', function() {
+  $('body').bind('keypress', step7KeyPressedHandler);
 });
 
-$('#step-35').bind('impress:stepleave', function () {
-  step35State = 0;
-  $('body').unbind('keypress', step35KeyPressedHandler);
+$('#step-7').bind('impress:stepleave', function () {
+  step7State = 0;
+  $('body').unbind('keypress', step7KeyPressedHandler);
 
-  $('#step-35 .giant:eq(0)').hide();
-  $('#step-35 .giant:eq(1)').css('opacity', 0.01);
-  $('#step-35 .small').hide();
+  $('#step-7 .giant:eq(0)').hide();
+  $('#step-7 .giant:eq(1)').css('opacity', 0.01);
+  $('#step-7 .small').hide();
 });
 
 
-var step37KeyPressedHandler = function (event) {
+var step9KeyPressedHandler = function (event) {
   if (event.which == 106) {  /* j */
-    if (step37State < 7) {
-      step37State++;
+    if (step9State < 7) {
+      step9State++;
       event.stopPropagation();
     }
   } else if (event.which == 107) {  /* k */
-    if (step37State > 0) {
-      step37State--;
+    if (step9State > 0) {
+      step9State--;
       event.stopPropagation();
     }
   } else { return; }
-  switch (step37State) {
+  switch (step9State) {
     case 1:
       $('#sgkd-1').fadeTo("slow", 1.0);
       break;
@@ -278,13 +278,13 @@ $('#sgkd-5').css('opacity', 0.01);
 $('#sgkd-6').css('opacity', 0.01);
 $('#sgkd-7').css('opacity', 0.01);
 
-$('#step-37').bind('impress:stepenter', function() {
-  $('body').bind('keypress', step37KeyPressedHandler);
+$('#step-9').bind('impress:stepenter', function() {
+  $('body').bind('keypress', step9KeyPressedHandler);
 });
 
-$('#step-37').bind('impress:stepleave', function () {
-  step37State = 0;
-  $('body').unbind('keypress', step37KeyPressedHandler);
+$('#step-9').bind('impress:stepleave', function () {
+  step9State = 0;
+  $('body').unbind('keypress', step9KeyPressedHandler);
 
   $('#sgkd-1').css('opacity', 0.01);
   $('#sgkd-2').css('opacity', 0.01);
@@ -296,19 +296,19 @@ $('#step-37').bind('impress:stepleave', function () {
 });
 
 
-var step41KeyPressedHandler = function (event) {
+var step13KeyPressedHandler = function (event) {
   if (event.which == 106) {  /* j */
-    if (step41State < 6) {
-      step41State++;
+    if (step13State < 6) {
+      step13State++;
       event.stopPropagation();
     }
   } else if (event.which == 107) {  /* k */
-    if (step41State > 0) {
-      step41State--;
+    if (step13State > 0) {
+      step13State--;
       event.stopPropagation();
     }
   } else { return; }
-  switch (step41State) {
+  switch (step13State) {
     case 1:
       $('#sgkd-c1').fadeTo("slow", 1.0);
       break;
@@ -337,13 +337,13 @@ $('#sgkd-c4').css('opacity', 0.01);
 $('#sgkd-c5').css('opacity', 0.01);
 $('#sgkd-c6').css('opacity', 0.01);
 
-$('#step-41').bind('impress:stepenter', function() {
-  $('body').bind('keypress', step41KeyPressedHandler);
+$('#step-13').bind('impress:stepenter', function() {
+  $('body').bind('keypress', step13KeyPressedHandler);
 });
 
-$('#step-41').bind('impress:stepleave', function () {
-  step41State = 0;
-  $('body').unbind('keypress', step41KeyPressedHandler);
+$('#step-13').bind('impress:stepleave', function () {
+  step13State = 0;
+  $('body').unbind('keypress', step13KeyPressedHandler);
 
   $('#sgkd-c1').css('opacity', 0.01);
   $('#sgkd-c2').css('opacity', 0.01);
@@ -354,19 +354,19 @@ $('#step-41').bind('impress:stepleave', function () {
 });
 
 
-var step42KeyPressedHandler = function (event) {
+var step14KeyPressedHandler = function (event) {
   if (event.which == 106) {  /* j */
-    if (step42State < 7) {
-      step42State++;
+    if (step14State < 7) {
+      step14State++;
       event.stopPropagation();
     }
   } else if (event.which == 107) {  /* k */
-    if (step42State > 0) {
-      step42State--;
+    if (step14State > 0) {
+      step14State--;
       event.stopPropagation();
     }
   } else { return; }
-  switch (step42State) {
+  switch (step14State) {
     case 1:
       $('#dsl-1').fadeTo("slow", 1.0);
       break;
@@ -399,13 +399,13 @@ $('#dsl-5').css('opacity', 0.01);
 $('#dsl-6').css('opacity', 0.01);
 $('#dsl-7').css('opacity', 0.01);
 
-$('#step-42').bind('impress:stepenter', function() {
-  $('body').bind('keypress', step42KeyPressedHandler);
+$('#step-14').bind('impress:stepenter', function() {
+  $('body').bind('keypress', step14KeyPressedHandler);
 });
 
-$('#step-42').bind('impress:stepleave', function () {
-  step42State = 0;
-  $('body').unbind('keypress', step42KeyPressedHandler);
+$('#step-14').bind('impress:stepleave', function () {
+  step14State = 0;
+  $('body').unbind('keypress', step14KeyPressedHandler);
 
   $('#dsl-1').css('opacity', 0.01);
   $('#dsl-2').css('opacity', 0.01);
