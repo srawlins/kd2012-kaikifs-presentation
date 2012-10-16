@@ -176,6 +176,12 @@ Honestly, Selenium has a pretty cool API, buuut...
 <span id="dsl-7">find(:xpath, <span class="green">"//table/tr"</span>).click</span>
 </code></pre>
 
+!SLIDE slide x=8500 y=-800
+
+## Once again...
+
+Cucumber **scenarios** are **driving a browser** through Selenium, and using RSpec to define the expected **behavior**.
+
 !SLIDE x=2700 y=100 scale=3
 
 ## What is <span class='cuke'>Cucumber</span>?
@@ -382,49 +388,103 @@ Verification steps. Typically limited to 3 verifications per scenario.
 * web applications
 * developer tools / libraries
 
-!SLIDE slide x=7000 y=1500
+!SLIDE x=2700 y=2100 scale=3
 
-## Once again...
+<h2>What is RSpec?</h2>
 
-Cucumber **scenarios** are **driving a browser** through Selenium, and using RSpec to define the expected **behavior**.
+!SLIDE x=4000 y=2100
 
-!SLIDE x=2700 y=2800 scale=3
+<h2>Behavior-Driven Development</h2>
+
+!SLIDE screen x=5000 y=2100
+
+### Bowling Example
+
+<pre id="bowling-1"><code><span class="teal"># bowling_spec.rb</span>
+require <span class="green">'bowling'</span>
+
+describe Bowling, <span class="green">"#score"</span> do
+  it <span class="green">"returns 0 for all gutter game"</span> do
+    bowling = Bowling.new
+    20.times { bowling.hit(0) }
+    bowling.score.should eq(0)
+  end
+end</code></pre>
+
+<pre id="bowling-2"><code>$ rspec bowling_spec.rb
+
+<span class="red">./bowling_spec.rb:4:
+  uninitialized constant Bowling</span></code></pre>
+
+<pre id="bowling-3"><code># bowling.rb
+class Bowling
+  def hit(pins)
+  end
+
+  def score
+    0
+  end
+end</code></pre>
+
+<pre id="bowling-4"><code>$ rspec bowling_spec.rb --format nested
+
+<span class="green">Bowling#score
+  returns 0 for all gutter game
+
+Finished in 0.007534 seconds
+
+1 example, 0 failures</span></code></pre>
+
+!SLIDE screen x=6000 y=2100
+
+## RSpec Matchers
+
+<pre><code>actual.should == expected
+actual.should be expected
+actual.should =~ /expression/
+actual.should be_an_instance_of  expected
+expect {...}.to raise_error(ErrorClass)
+actual.should have_xxx(:arg)
+actual.should include(expected)
+</code></pre>
+
+!SLIDE x=2700 y=3500 scale=3
 
 ## What is so great about <span class="kaikifs"><span class="red">K</span><span class="blue">aiki</span><span class="red">FS</span></span>?
 
 ("I like my Selenium IDE...")
 
-!SLIDE x=8000 y=4200 rotate=0
+!SLIDE x=8000 y=5200 rotate=0
 
 ### Record Video
 
-!SLIDE x=7848 y=3435 rotate=-23
+!SLIDE x=7848 y=4435 rotate=-23
 
 ### Automatically screenshot point of failure
 
 <p style="margin: 0.3em auto; text-align: center;"><img src="screenshot.png" style="width:480px;" /></p>
 
-!SLIDE x=7414 y=2786 rotate=-45
+!SLIDE x=7414 y=3786 rotate=-45
 
 ### Log every click and attempt to find an element
 
-!SLIDE x=6765 y=2352 rotate=-68
+!SLIDE x=6765 y=3352 rotate=-68
 
 ### Fill in fields by their "label"
 
-!SLIDE x=6000 y=2200 rotate=-90
+!SLIDE x=6000 y=3200 rotate=-90
 
 <p style="margin: 0.3em auto; text-align: center;"><img src="label.png" style="width:600px; border-right: solid 1px black; border-bottom: solid 1px black;" /></p>
 
-!SLIDE x=5235 y=2352 rotate=-113
+!SLIDE x=5235 y=3352 rotate=-113
 
 <p style="margin: 0.3em auto; text-align: center;"><img src="no_label.png" style="width:600px; border-right: solid 1px black; border-bottom: solid 1px black;" /></p>
 
-!SLIDE x=4586 y=2786 rotate=-135
+!SLIDE x=4586 y=3786 rotate=-135
 
 <p style="margin: 0.3em auto; text-align: center;"><img src="no_label_02.png" style="width:600px; border-right: solid 1px black;" /></p>
 
-!SLIDE x=4152 y=3435 rotate=-158
+!SLIDE x=4152 y=4435 rotate=-158
 
 ### Fill in fields by their position in a list
 
@@ -432,25 +492,25 @@ Cucumber **scenarios** are **driving a browser** through Selenium, and using RSp
 
 "second" Line Item
 
-!SLIDE x=4000 y=4200 rotate=-180
+!SLIDE x=4000 y=5200 rotate=-180
 
 <p style="margin: 0.3em auto; text-align: center;"><img src="second_item.png" style="width:600px; border-right: solid 1px black;" /></p>
 
-!SLIDE x=4152 y=4965 rotate=-202
+!SLIDE x=4152 y=5965 rotate=-202
 
 ### "Remember" information during the scenario
 
-!SLIDE screen x=4586 y=5614 rotate=-225
+!SLIDE screen x=4586 y=6614 rotate=-225
 
-<pre><code><span class="green">And I click "<strong>submit</strong>"</span>
-<span class="green">Then I should see "<strong>Document was successfully submitted.</strong>"</span>
+<pre><code><span class="unimportant"><span class="green">And I click "<strong>submit</strong>"</span>
+<span class="green">Then I should see "<strong>Document was successfully submitted.</strong>"</span></span>
 <span class="green">When I record this document number</span>
 <strong class="teal">  1232486</strong>
 <span class="green">When I record this "<strong>Requisition #</strong>"</span>
 <strong class="teal">  Requisition # = 60809</strong>
 <span class="green">And I backdoor as "<strong>kfs-test-sec-2</strong>"</span>
 <span class="green">And I open my Action List, refreshing until that document appears</span>
-...
+<span class="unimportant">...
 <span class="green">And I click "<strong>approve</strong>"</span>
 <span class="green">Then I should see my Action List</span>
 <span class="green">When I backdoor as "<strong>kfs-test-sec22</strong>"</span>
@@ -459,34 +519,34 @@ Cucumber **scenarios** are **driving a browser** through Selenium, and using RSp
 <span class="green">And I click "<strong>approve</strong>"</span>
 <span class="green">Then I should see my Action List</span>
 <span class="green">When I backdoor as "<strong>kfs-test-sec40</strong>"</span>
-<span class="green">And I am on the "<strong>Main Menu</strong>" tab</span>
+<span class="green">And I am on the "<strong>Main Menu</strong>" tab</span></span>
 <span class="green">And I click the "<strong>Contract Manager Assignment</strong>" portal link</span>
 <span class="green">And I fill out the following for that "<strong>Requisition #</strong>":</span>
 <span class="teal">  | Contract Manager | 10 |</span>
-<span class="green">And I click "<strong>submit</strong>"</span>
+<span class="unimportant"><span class="green">And I click "<strong>submit</strong>"</span></span>
 </code></pre>
 
-!SLIDE x=5235 y=6048 rotate=-247
+!SLIDE x=5235 y=7048 rotate=-247
 
 ### Handle asynchronous activity
 
-!SLIDE x=6000 y=6200 rotate=-270
+!SLIDE x=6000 y=7200 rotate=-270
 
 ### Highlight page elements during scenario
 
-!SLIDE x=6765 y=6048 rotate=-293
+!SLIDE x=6765 y=7048 rotate=-293
 
 ### Speed up, slow down, pause scenarios
 
-!SLIDE x=7414 y=5614 rotate=-315
+!SLIDE x=7414 y=6614 rotate=-315
 
 ### Integrate into your CI
 
-!SLIDE x=7848 y=4965 rotate=-337
+!SLIDE x=7848 y=5965 rotate=-337
 
 a
 
-!SLIDE x=2700 y=3500
+!SLIDE x=2700 y=7600
 
 ## Credit to
 
@@ -496,21 +556,21 @@ impress.js;
 
 Selenium; Capybara;
 
-!SLIDE x=2700 y=4150
+!SLIDE x=2700 y=8250
 
 <p style="margin: 0.3em auto; text-align: center;"><img src="starshiptroopers.jpg" style="width:600px; border-right: solid 1px black;" /></p>
 
-!SLIDE left smaller slide x=2700 y=4800
+!SLIDE left smaller slide x=2700 y=8900
 
 Website: [confluence.arizona.edu/confluence/display/KATT/KaikiFS](confluence.arizona.edu/confluence/display/KATT/KaikiFS)
 
 (for the lazy/pragmatic: google 'kaikifs')
 
-!SLIDE x=2700 y=5450
+!SLIDE x=2700 y=9550
 
 <h2>Feedback-Driven Development</h2>
 
-!SLIDE x=2700 y=6100
+!SLIDE x=2700 y=10200
 
 ### Test!
 
@@ -518,17 +578,19 @@ Website: [confluence.arizona.edu/confluence/display/KATT/KaikiFS](confluence.ari
 
 ## Test!!!!!!!!
 
-!SLIDE left smaller slide x=2700 y=6750
+!SLIDE left smaller slide x=2700 y=10850
 
 Cucumber Videos: cukes.info
 
 Selenium Blog Aggregation: A Smattering of Selenium
 
-!SLIDE slide x=2700 y=7400
+!SLIDE slide x=2700 y=11500
 
 <h2 class="kaikifs"><span class="red">K</span><span class="blue">aiki</span><span class="red">FS</span></h2>
 
 srawlins@email.arizona.edu
+
+Skype: argv.empty
 
 %% The End
 %%%%%%%%%%%%%%%

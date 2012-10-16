@@ -62,6 +62,8 @@ code {
     color: #00FF00; }
 .step pre code .darkgreen {
   color: #006600; }
+.step pre code .red {
+  color: #CC0000; }
 .step pre code .teal {
   color: #00CDCD; }
 .step pre code .yellow {
